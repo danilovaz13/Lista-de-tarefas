@@ -1,20 +1,21 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { FcEmptyTrash, FcCheckmark } from 'react-icons/fc';
 
-import { Container, ToDoList, Input, Button } from './styles';
+import { Container, ToDoList, Input, Button, ListItem } from './styles';
 
 const App = () => {
   const [list, setlist] = React.useState([]);
   const [showInput, setShowInput] = React.useState(null);
 
-  function inputchange(event) {
+  const inputchange = (event) => {
     setShowInput({ id: uuidv4(), task: event.target.value });
-  }
+  };
 
-  function handleClick() {
+  const handleClick = () => {
     setlist([...list, showInput]);
     console.log(list);
-  }
+  };
   return (
     <Container>
       <ToDoList>
@@ -28,7 +29,11 @@ const App = () => {
 
         <ul>
           {list.map((list) => (
-            <li key={list.id}>{list.task}</li>
+            <ListItem>
+              <FcCheckmark />
+              <li key={list.id}>{list.task}</li>
+              <FcEmptyTrash />
+            </ListItem>
           ))}
         </ul>
       </ToDoList>

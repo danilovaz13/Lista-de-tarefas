@@ -11,8 +11,18 @@ export const Container = styled.div`
 
 export const ToDoList = styled.div`
   background: white;
-  padding: 30px 20px;
+  padding: 25px 20px;
   border-radius: 5px;
+  width: 500px;
+
+  ul {
+    padding: 0;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Input = styled.input`
@@ -21,16 +31,35 @@ export const Input = styled.input`
   height: 35px;
   margin-right: 10px;
   outline: none;
+  width: 400px;
 `;
 
 export const Button = styled.button`
   background: #8052ec;
   border-radius: 5px;
   height: 35px;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 12px;
   line-height: 2px;
   color: #ffffff;
   border: none;
-  font-family: 'Roboto';
+  font-family: 'IBM Plex Mono', monospace;
+  width: 80px;
+`;
+
+export const ListItem = styled.div`
+  background: #e4e4e4;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  width: 450px;
+
+  li {
+    list-style: none;
+  }
 `;
