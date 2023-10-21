@@ -1,6 +1,8 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
+import { Container, ToDoList, Input, Button } from './styles';
+
 const App = () => {
   const [list, setlist] = React.useState([]);
   const [showInput, setShowInput] = React.useState(null);
@@ -14,22 +16,23 @@ const App = () => {
     console.log(list);
   }
   return (
-    <div>
-      <input
-        id="input-value"
-        onChange={inputchange}
-        type="text"
-        placeholder="O que tenha pra fazer..."
-      />
-      <button onClick={handleClick}>Adicionar</button>
+    <Container>
+      <ToDoList>
+        <Input
+          id="input-value"
+          onChange={inputchange}
+          type="text"
+          placeholder="O que tenha pra fazer..."
+        />
+        <Button onClick={handleClick}>Adicionar</Button>
 
-      <ul>
-        {list.map((list) => (
-          <li key={list.id}>{list.task}</li>
-        ))}
-      </ul>
-      {/* <p>{showInput.task}</p> */}
-    </div>
+        <ul>
+          {list.map((list) => (
+            <li key={list.id}>{list.task}</li>
+          ))}
+        </ul>
+      </ToDoList>
+    </Container>
   );
 };
 export default App;
