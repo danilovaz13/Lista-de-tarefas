@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     border: none;
   }
+  
 `;
 
 export default GlobalStyles;

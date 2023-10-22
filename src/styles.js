@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FcEmptyTrash, FcCheckmark } from 'react-icons/fc';
 
 export const Container = styled.div`
   background: linear-gradient(90deg, #383838 0%, #000000 81.25%);
@@ -45,10 +46,15 @@ export const Button = styled.button`
   border: none;
   font-family: 'IBM Plex Mono', monospace;
   width: 80px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #7152ec;
+  }
 `;
 
 export const ListItem = styled.div`
-  background: #e4e4e4;
+  background: ${(props) => (props['data-is-finished'] ? '#e8ff8b' : '#e4e4e4')};
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   height: 30px;
@@ -61,5 +67,21 @@ export const ListItem = styled.div`
 
   li {
     list-style: none;
+    font-family: 'IBM Plex Mono';
   }
+`;
+
+export const Titleh3 = styled.h3`
+  color: #e1e1e1;
+  font-family: 'IBM Plex Mono';
+  background-color: #f6f6f6;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+`;
+
+export const Trash = styled(FcEmptyTrash)`
+  cursor: pointer;
+`;
+export const Check = styled(FcCheckmark)`
+  cursor: pointer;
 `;
